@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./index.css"
+import NewTransaction from "./Newtransaction";
+
+
 function Transactions() {
   const [transactions, setTransactions] = useState([]);
+  const addTransaction = (newTransaction) => {
+    setTransactions([...transactions, newTransaction]);
+  };
 
   useEffect(() => {
     fetch("http://localhost:3000/transactions")
@@ -39,6 +45,7 @@ function Transactions() {
           ))}
         </tbody>
       </table>
+      <NewTransaction addTransaction={addTransaction} />
     </>
   );
 }

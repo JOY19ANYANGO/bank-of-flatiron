@@ -1,8 +1,8 @@
 import React,{useState} from "react";
  function Searchbar(){
-  const [search,setSearch]=useState("")
+  const [description,setDescription]=useState("")
   function handleSearch(event){
-    setSearch(event.target.value)
+    setDescription(event.target.value)
   }
    return(
       <input type="text" placeholder="search transaction description" onChange={handleSearch}/>
