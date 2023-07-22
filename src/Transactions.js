@@ -13,6 +13,7 @@ useEffect(() => {
     .then((r) => r.json())
     .then((data) => {
       console.log("Fetched data:", data)
+      //sort the fetched array alphabetically according to the category
       data.sort((a, b) =>
       a.category.toLowerCase().localeCompare(b.category.toLowerCase())
     
@@ -21,16 +22,17 @@ useEffect(() => {
       });
      
 },[]); 
+
   //adds a new transaction
   const addTransaction = (newTransaction) => {
     setTransactions([...transactions, newTransaction]);
-    
   };
+
 
  // Filter transactions based on the entered description
   const handleSearch = (description) => {
    
-    if (description.trim() === "" || description === null) {
+    if (description === "" || description === null) {
       //display all the transactions
       fetch("http://localhost:3000/transactions")
     .then((r) => r.json())
@@ -43,7 +45,8 @@ useEffect(() => {
       setTransactions(data)
 
      });
-    } else {
+    } 
+    else {
       // Filter transactions based on the entered description
       const filtered = transactions.filter((transaction) =>
         transaction.description.toLowerCase().includes(description.toLowerCase())
@@ -58,6 +61,8 @@ useEffect(() => {
    
  
 };
+
+
 const handleDelete = (id) => {
   // Filter out the transaction with the given id and update the transactions state
   const updatedTransactions = transactions.filter((transaction) => transaction.id !== id);
@@ -67,13 +72,12 @@ const handleDelete = (id) => {
 
  
 
-  // Check if transactions array is empty or undefined before rendering
   
- 
   return  (
     <>
       <h1>Transactions</h1>
       <Searchbar onSearch={handleSearch} />
+      {/*display transaction if description match and Transaction not found if there is no description that matches the search*/}
       {transactions.length === 0 ? (
         <p>Transaction not found</p>
       ) : (

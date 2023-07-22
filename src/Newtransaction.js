@@ -5,24 +5,29 @@ function NewTransaction({ addTransaction }){
   const [category, setCategory] = useState("");
   const [amount, setAmount] = useState("");
 
+
   const handleDateChange = (event) => {
     setDate(event.target.value);
   };
+
 
   const handleDescriptionChange = (event) => {
     setDescription(event.target.value);
   };
 
+
   const handleCategoryChange = (event) => {
     setCategory(event.target.value);
   };
 
+
   const handleAmountChange = (event) => {
     setAmount(event.target.value);
   };
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
     // Create a new transaction object using the form data
     const newTransaction = {
       date: date,
@@ -30,12 +35,8 @@ function NewTransaction({ addTransaction }){
       category: category,
       amount: parseFloat(amount), // Convert the amount to a number
     };
-
-
     addTransaction(newTransaction);
-    // Perform any other actions with the new transaction data,
-    // such as saving it to a list of transactions or making an API request.
-
+   
     // Clear the form fields after submission
     setDate("");
     setDescription("");
@@ -45,6 +46,8 @@ function NewTransaction({ addTransaction }){
 
 
     return(
+      <>
+      <h1>New Transaction</h1>
         <form>
             <label>Date:</label>
             <input type="date" value={date} onChange={handleDateChange} /><br></br>
@@ -56,6 +59,7 @@ function NewTransaction({ addTransaction }){
             <input type="number" value={amount} onChange={handleAmountChange} /><br></br>
             <button type="submit" onClick={handleSubmit }>Add Transaction</button><br></br>
         </form>
+        </>
     )
 }
 export default NewTransaction
