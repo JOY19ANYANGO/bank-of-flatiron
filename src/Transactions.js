@@ -58,7 +58,11 @@ useEffect(() => {
    
  
 };
-
+const handleDelete = (id) => {
+  // Filter out the transaction with the given id and update the transactions state
+  const updatedTransactions = transactions.filter((transaction) => transaction.id !== id);
+  setTransactions(updatedTransactions);
+};
 
 
  
@@ -80,6 +84,8 @@ useEffect(() => {
             <th style={{ backgroundColor: "#a29bfe" }}>Description</th>
             <th style={{ backgroundColor: "#74b9ff" }}>Category</th>
             <th style={{ backgroundColor: "#55efc4" }}>Amount</th>
+            <th style={{ backgroundColor: "red" }}>Delete</th>
+            
       </tr>
           </thead>
           <tbody>
@@ -89,6 +95,9 @@ useEffect(() => {
                 <td>{transaction.description}</td>
                 <td>{transaction.category}</td>
                 <td>{transaction.amount}</td>
+                <td>
+                  <button onClick={() => handleDelete(transaction.id)}>Delete</button>
+                </td>
               </tr>
             ))}
           </tbody>
