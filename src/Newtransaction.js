@@ -47,14 +47,14 @@ function NewTransaction({ addTransaction }){
     return(
         <form>
             <label>Date:</label>
-            <input type="date" value={date} onChange={handleDateChange} />
+            <input type="date" value={date} onChange={handleDateChange} /><br></br>
             <label>Description</label>
-            <input type="text" value={description} onChange={handleDescriptionChange}/>
+            <input type="text" value={description} onChange={handleDescriptionChange}/><br></br>
             <label>Category</label>
-            <input type="text" value={category} onChange={handleCategoryChange} />
+            <input type="text" value={category} onChange={handleCategoryChange} /><br></br>
             <label>Amount</label>
-            <input type="number" value={amount} onChange={handleAmountChange} />
-            <button type="submit" onClick={handleSubmit }>Add Transaction</button>
+            <input type="number" value={amount} onChange={handleAmountChange} /><br></br>
+            <button type="submit" onClick={handleSubmit }>Add Transaction</button><br></br>
         </form>
     )
 }
