@@ -69,6 +69,15 @@ const handleDelete = (id) => {
   setTransactions(updatedTransactions);
 };
 
+const handleSortAscending = () => {
+  const sortedTransactions = [...transactions].sort((a, b) => new Date(a.date) - new Date(b.date));
+  setTransactions(sortedTransactions);
+};
+
+const handleSortDescending = () => {
+  const sortedTransactions = [...transactions].sort((a, b) => new Date(b.date) - new Date(a.date));
+  setTransactions(sortedTransactions);
+};
 
  
 
@@ -77,6 +86,7 @@ const handleDelete = (id) => {
     <>
       <h1>Transactions</h1>
       <Searchbar onSearch={handleSearch} />
+     
       {/*display transaction if description match and Transaction not found if there is no description that matches the search*/}
       {transactions.length === 0 ? (
         <p>Transaction not found</p>
@@ -107,7 +117,16 @@ const handleDelete = (id) => {
           </tbody>
         </table>
       )}
+      <div >
+        <div>
       <NewTransaction addTransaction={addTransaction} />
+         </div>
+       <div className="section2" style={{ display: "flex" }}>
+        <h2>Sort by date:</h2>
+        <button onClick={handleSortAscending}>Ascending</button>
+        <button onClick={handleSortDescending }>Descending</button>
+      </div>
+      </div>
     </>
   );
 }

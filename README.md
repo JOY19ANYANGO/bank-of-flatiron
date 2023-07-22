@@ -36,7 +36,8 @@ In the webpage you should see a table containing a list of transactions their da
 * To find a specific transcation enter transaction description in the search bar.
 * To add a new transaction fill in the transaction form.
 * To remove a transaction press delete button.
-
+* The transactions have been dislayed in alphabetical order depending on the category
+* You can sort the date by clicking ascending or descending button.
 ## License.
 Author Joy Anyango
 

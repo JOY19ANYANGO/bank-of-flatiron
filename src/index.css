@@ -63,7 +63,7 @@ input {
 
 button {
   display: block;
-  width: 50%;
+  width: 20%;
   padding: 10px;
   background-color: #007bff;
   color: #fff;
@@ -74,4 +74,7 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+table button{
+  width: 50%;
 }
