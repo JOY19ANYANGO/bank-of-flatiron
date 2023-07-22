@@ -13,7 +13,12 @@ useEffect(() => {
     .then((r) => r.json())
     .then((data) => {
       console.log("Fetched data:", data)
-      setTransactions(data)});
+      data.sort((a, b) =>
+      a.category.toLowerCase().localeCompare(b.category.toLowerCase())
+    
+    );
+      setTransactions(data)
+      });
      
 },[]); 
   //adds a new transaction
@@ -31,14 +36,27 @@ useEffect(() => {
     .then((r) => r.json())
     .then((data) => {
       console.log("Fetched data:", data)
-      setTransactions(data)});
+      data.sort((a, b) =>
+      a.category.toLowerCase().localeCompare(b.category.toLowerCase())
+    
+    );
+      setTransactions(data)
+
+     });
     } else {
       // Filter transactions based on the entered description
       const filtered = transactions.filter((transaction) =>
         transaction.description.toLowerCase().includes(description.toLowerCase())
       );
+      filtered.sort((a, b) =>
+      a.category.toLowerCase().localeCompare(b.category.toLowerCase())
+    
+    );
       setTransactions(filtered);
+      console.log(filtered)
     }
+   
+ 
 };
 
 
