@@ -86,7 +86,15 @@ const handleSortDescription = () => {
 
   setTransactions(sortedTransactions);
 };
+ //sort transaction by  category
+const handleSortCategory = () => {
+  const sortedTransactions = [...transactions].sort((a, b) =>
+  a.category.toLowerCase().localeCompare(b.category.toLowerCase()));
+
+  setTransactions(sortedTransactions);
+};
  
+
 
   
   return  (
@@ -125,16 +133,15 @@ const handleSortDescription = () => {
         </table>
       )}
       <div >
+        <div className="sort"style={{ display: "flex" ,justifyContent:"space-evenly",width:"80%"}}>
+        <button onClick={handleSortAscending}> sort by date(Ascending)</button>
+        <button onClick={handleSortDescending }>sort by date(Descending)</button>
+        <button  onClick={handleSortDescription }>sort by Description</button>
+        <button  onClick={handleSortCategory }>sort by Category</button>
+        </div>
         <div>
       <NewTransaction addTransaction={addTransaction} />
-         </div>
-       <div className="section2" style={{ display: "flex" }}>
-        <h2>Sort by date:</h2>
-        <button onClick={handleSortAscending}>Ascending</button>
-        <button onClick={handleSortDescending }>Descending</button>
-        <h2>Sort by description:</h2>
-        <button  onClick={handleSortDescription }>Description</button>
-      </div>
+        </div>
       </div>
     </>
   );
