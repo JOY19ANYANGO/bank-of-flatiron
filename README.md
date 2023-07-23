@@ -38,6 +38,8 @@ In the webpage you should see a table containing a list of transactions their da
 * To remove a transaction press delete button.
 * The transactions have been dislayed in alphabetical order depending on the category
 * You can sort the date by clicking ascending or descending button.
+* You can sort by description by clicking the description button.
+
 ## License.
 Author Joy Anyango
 

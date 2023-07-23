@@ -68,7 +68,7 @@ const handleDelete = (id) => {
   const updatedTransactions = transactions.filter((transaction) => transaction.id !== id);
   setTransactions(updatedTransactions);
 };
-
+//sort transaction by date
 const handleSortAscending = () => {
   const sortedTransactions = [...transactions].sort((a, b) => new Date(a.date) - new Date(b.date));
   setTransactions(sortedTransactions);
@@ -79,6 +79,13 @@ const handleSortDescending = () => {
   setTransactions(sortedTransactions);
 };
 
+//sort transaction by description
+const handleSortDescription = () => {
+  const sortedTransactions = [...transactions].sort((a, b) =>
+  a.description.toLowerCase().localeCompare(b.description.toLowerCase()));
+
+  setTransactions(sortedTransactions);
+};
  
 
   
@@ -108,7 +115,7 @@ const handleSortDescending = () => {
                 <td>{transaction.date}</td>
                 <td>{transaction.description}</td>
                 <td>{transaction.category}</td>
-                <td>{transaction.amount}</td>
+                <td>${Number(transaction.amount).toFixed(2)}</td>
                 <td>
                   <button onClick={() => handleDelete(transaction.id)}>Delete</button>
                 </td>
@@ -125,6 +132,8 @@ const handleSortDescending = () => {
         <h2>Sort by date:</h2>
         <button onClick={handleSortAscending}>Ascending</button>
         <button onClick={handleSortDescending }>Descending</button>
+        <h2>Sort by description:</h2>
+        <button  onClick={handleSortDescription }>Description</button>
       </div>
       </div>
     </>
