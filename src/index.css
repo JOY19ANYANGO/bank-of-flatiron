@@ -5,11 +5,6 @@ table {
 }
 
 /* Style the table header */
-thead {
-  background-color: #7c98b3;
-  color: #fff;
-  font-weight: bold;
-}
 
 th, td {
   padding: 8px;
@@ -43,8 +38,9 @@ td:last-child {
   margin: 0 auto;
 }
 .transaction-form {
-  max-width: 400px;
+  max-width: 300px;
   margin: 0 auto;
+  border-style: solid;
 }
 
 label {

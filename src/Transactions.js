@@ -9,7 +9,7 @@ function Transactions() {
   
 //fetch the transcations
 useEffect(() => {
-  fetch("http://localhost:3000/transactions")
+  fetch("http://localhost:4000/transactions")
     .then((r) => r.json())
     .then((data) => {
       console.log("Fetched data:", data)
@@ -34,7 +34,7 @@ useEffect(() => {
    
     if (description === "" || description === null) {
       //display all the transactions
-      fetch("http://localhost:3000/transactions")
+      fetch("http://localhost:4000/transactions")
     .then((r) => r.json())
     .then((data) => {
       console.log("Fetched data:", data)

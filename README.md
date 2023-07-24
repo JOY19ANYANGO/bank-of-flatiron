@@ -27,9 +27,19 @@ $ git clone https://github.com/JOY19ANYANGO/bank-of-flatiron
 ```bash
 $ cd bank-of-flatiron
 ```
-* Run `npm install` to install dependencies and `PORT=3001 npm start` to start the server.
-* If you do not have json server installed run `npm install json-server.`
-* If you have it installed run `json-server --watch db.json`
+* To install dependencies run
+```bash
+$ npm install
+```
+* If you do not have json server installed run `npm install json-server.`to install it.
+* To run JSON server use
+```bash
+$ npm run server
+```
+* Leave json-server running. Open a new terminal, and run React with:
+```bash
+$ npm start
+```
 
 ## Usage.
 In the webpage you should see a table containing a list of transactions their date description category and ammount.It also contains a form in which you can add a new transaction.
