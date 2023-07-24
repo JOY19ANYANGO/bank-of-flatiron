@@ -27,6 +27,10 @@ $ git clone https://github.com/JOY19ANYANGO/bank-of-flatiron
 ```bash
 $ cd bank-of-flatiron
 ```
+* Open in your vs code
+```bash
+$ code .
+```
 * To install dependencies run
 ```bash
 $ npm install
